@@ -1,4 +1,4 @@
-package main.java.com.mobilityX.models;
+package main.java.com.mobilityX.models.vehicle;
 
 public class Vehiculo {
     private String id;
