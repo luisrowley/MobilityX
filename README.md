@@ -48,7 +48,5 @@ MobilityX/
 │   │   │   │   ├── UsuarioTest.java            # Pruebas para Usuario
 │   │   │   │   ├── VehiculoTest.java           # Pruebas para Vehiculo
 │   │   │   │   ├── EstacionTest.java           # Pruebas para Estacion
-│── pom.xml                                      # Configuración de Maven (si usas Maven)
-│── build.gradle                                 # Configuración de Gradle (si usas Gradle)
-│── README.md                                    # Documentación del proyecto
+│── README.md                                   # Documentación del proyecto
 ```
