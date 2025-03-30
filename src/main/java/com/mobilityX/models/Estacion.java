@@ -1,9 +1,9 @@
-package main.java.com.mobilityX.models;
+package com.mobilityX.models;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import main.java.com.mobilityX.models.vehicle.Vehiculo;
+import com.mobilityX.models.vehicle.Vehiculo;
 
 class Estacion {
     private String nombre;

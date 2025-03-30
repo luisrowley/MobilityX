@@ -1,4 +1,4 @@
-package main.java.com.mobilityX.utils;
+package com.mobilityX.utils;
 
 public class Config {
     

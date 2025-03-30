@@ -1,11 +1,11 @@
-package main.java.com.mobilityX.services;
+package com.mobilityX.services;
 
-import main.java.com.mobilityX.models.user.Usuario;
-import main.java.com.mobilityX.models.user.UsuarioPremium;
-import main.java.com.mobilityX.models.worker.Administrador;
-import main.java.com.mobilityX.models.worker.Mecanico;
-import main.java.com.mobilityX.models.worker.PersonalMantenimiento;
-import main.java.com.mobilityX.models.worker.Trabajador;
+import com.mobilityX.models.user.Usuario;
+import com.mobilityX.models.user.UsuarioPremium;
+import com.mobilityX.models.worker.Administrador;
+import com.mobilityX.models.worker.Mecanico;
+import com.mobilityX.models.worker.PersonalMantenimiento;
+import com.mobilityX.models.worker.Trabajador;
 
 import java.util.ArrayList;
 import java.util.HashMap;

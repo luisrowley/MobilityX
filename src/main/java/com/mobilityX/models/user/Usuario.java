@@ -1,6 +1,6 @@
-package main.java.com.mobilityX.models.user;
+package com.mobilityX.models.user;
 
-import main.java.com.mobilityX.models.vehicle.Vehiculo;
+import com.mobilityX.models.vehicle.Vehiculo;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;

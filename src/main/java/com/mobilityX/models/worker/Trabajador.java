@@ -1,4 +1,4 @@
-package main.java.com.mobilityX.models.worker;
+package com.mobilityX.models.worker;
 
 public abstract class Trabajador {
     protected String nombre;

@@ -1,4 +1,4 @@
-package main.java.com.mobilityX.models.worker;
+package com.mobilityX.models.worker;
 
 public class PersonalMantenimiento extends Trabajador {
     public PersonalMantenimiento(String nombre, String correo, String telefono) {

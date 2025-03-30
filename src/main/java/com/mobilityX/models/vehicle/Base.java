@@ -1,4 +1,4 @@
-package main.java.com.mobilityX.models.vehicle;
+package com.mobilityX.models.vehicle;
 
 import java.util.ArrayList;
 import java.util.List;

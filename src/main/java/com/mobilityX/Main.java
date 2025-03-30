@@ -1,7 +1,7 @@
-package main.java.com.mobilityX;
+package com.mobilityX;
 
-import main.java.com.mobilityX.models.vehicle.*;
-import main.java.com.mobilityX.services.*;
+import com.mobilityX.models.vehicle.*;
+import com.mobilityX.services.*;
 
 public class Main {
     public static void main(String[] args) {

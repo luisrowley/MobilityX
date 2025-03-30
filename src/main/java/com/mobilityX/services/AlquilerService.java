@@ -1,9 +1,9 @@
-package main.java.com.mobilityX.services;
+package com.mobilityX.services;
 
-import main.java.com.mobilityX.models.user.Usuario;
-import main.java.com.mobilityX.models.vehicle.Base;
-import main.java.com.mobilityX.models.vehicle.Vehiculo;
-import main.java.com.mobilityX.models.vehicle.Moto;
+import com.mobilityX.models.user.Usuario;
+import com.mobilityX.models.vehicle.Base;
+import com.mobilityX.models.vehicle.Vehiculo;
+import com.mobilityX.models.vehicle.Moto;
 
 import java.time.Duration;
 import java.time.LocalDateTime;

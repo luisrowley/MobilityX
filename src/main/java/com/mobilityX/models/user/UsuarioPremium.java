@@ -1,4 +1,4 @@
-package main.java.com.mobilityX.models.user;
+package com.mobilityX.models.user;
 
 public class UsuarioPremium extends Usuario {
     private double descuento;
