@@ -1,6 +1,6 @@
 package main.java.com.mobilityX.models.user;
 
-class UsuarioPremium extends Usuario {
+public class UsuarioPremium extends Usuario {
     private double descuento;
     private boolean puedeReservar;
     private boolean puedeUsarBateriaBaja;

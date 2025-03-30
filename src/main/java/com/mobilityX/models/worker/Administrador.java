@@ -1,8 +1,8 @@
 package main.java.com.mobilityX.models.worker;
 
 public class Administrador extends Trabajador {
-    public Administrador(String nombre, String dni) {
-        super(nombre, dni, "Administrador del Sistema");
+    public Administrador(String nombre, String correo, String telefono) {
+        super(nombre, correo, telefono, "Administrador del Sistema");
     }
 
     @Override

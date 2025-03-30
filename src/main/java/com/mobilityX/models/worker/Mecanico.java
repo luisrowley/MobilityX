@@ -1,8 +1,8 @@
 package main.java.com.mobilityX.models.worker;
 
 public class Mecanico extends Trabajador {
-    public Mecanico(String nombre, String dni) {
-        super(nombre, dni, "Mecánico");
+    public Mecanico(String nombre, String correo, String telefono) {
+        super(nombre, correo, telefono, "Mecánico");
     }
 
     @Override
