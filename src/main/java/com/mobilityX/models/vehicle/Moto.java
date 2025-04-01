@@ -1,4 +1,4 @@
-package main.java.com.mobilityX.models.vehicle;
+package com.mobilityX.models.vehicle;
 
 public class Moto extends Vehiculo {
     private final int cilindrada;
