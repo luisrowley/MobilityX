@@ -25,4 +25,12 @@ gradle-app.setting
 .vscode/
 .code-workspace
 
+##############################
+## Maven
+##############################
+target/
 
+##############################
+## Surefire
+##############################
+target/surefire-reports/
