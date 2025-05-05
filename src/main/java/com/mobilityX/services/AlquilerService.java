@@ -1,6 +1,7 @@
 package com.mobilityX.services;
 
 import com.mobilityX.models.user.Usuario;
+import com.mobilityX.models.user.UsuarioPremium;
 import com.mobilityX.models.vehicle.Base;
 import com.mobilityX.models.vehicle.Vehiculo;
 import com.mobilityX.models.vehicle.Moto;
@@ -106,8 +107,17 @@ public class AlquilerService {
         // Calcular duración y costo
         Duration duracion = Duration.between(inicio, LocalDateTime.now());
         int horasUso = (int) Math.ceil(duracion.toMinutes() / 60.0);
-        double tarifa = tarifas.get(vehiculo.getClass().getSimpleName());
+        Double tarifa = getTarifa(vehiculo.getClass().getSimpleName());
+        if (tarifa == null) {
+            return false;
+        }
         double costoTotal = tarifa * horasUso;
+
+        // Descuento para usuarios premium (sin pattern matching para compatibilidad)
+        if (usuario instanceof UsuarioPremium) {
+            UsuarioPremium premium = (UsuarioPremium) usuario;
+            costoTotal = costoTotal * (1 - premium.getDescuento());
+        }
 
         try {
             usuario.finalizarAlquiler(costoTotal);
@@ -121,5 +131,17 @@ public class AlquilerService {
         } catch (IllegalStateException e) {
             return false;
         }
+    }
+
+    public boolean actualizarTarifa(String tipoVehiculo, double nuevaTarifa) {
+        if (nuevaTarifa < 0) {
+            return false;
+        }
+        tarifas.put(tipoVehiculo, nuevaTarifa);
+        return true;
+    }
+
+    public Double getTarifa(String tipoVehiculo) {
+        return tarifas.get(tipoVehiculo);
     }
 }

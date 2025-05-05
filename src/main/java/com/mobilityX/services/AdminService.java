@@ -137,4 +137,27 @@ public class AdminService {
     public Trabajador getTrabajador(String correo) {
         return trabajadores.get(correo);
     }
+
+    // Búsqueda simple por nombre o correo (contiene, sin diferenciar mayúsculas)
+    public List<Usuario> buscarUsuarios(String criterio) {
+        String lower = criterio.toLowerCase();
+        List<Usuario> resultados = new ArrayList<>();
+        for (Usuario u : usuarios.values()) {
+            if (u.getNombre().toLowerCase().contains(lower) || u.getCorreo().toLowerCase().contains(lower)) {
+                resultados.add(u);
+            }
+        }
+        return resultados;
+    }
+
+    public List<Trabajador> buscarTrabajadores(String criterio) {
+        String lower = criterio.toLowerCase();
+        List<Trabajador> resultados = new ArrayList<>();
+        for (Trabajador t : trabajadores.values()) {
+            if (t.getNombre().toLowerCase().contains(lower) || t.getCorreo().toLowerCase().contains(lower)) {
+                resultados.add(t);
+            }
+        }
+        return resultados;
+    }
 }
