@@ -10,6 +10,8 @@ public class Vehiculo {
     protected int bateria;
     protected int x, y;
     protected boolean averiado;
+    // Tiempo total de uso acumulado (en minutos)
+    private long tiempoUsoMinutosTotal;
     private final List<Reparacion> historialReparaciones;
     protected static final int CONSUMO_BATERIA_POR_HORA = 10;
 
@@ -20,6 +22,7 @@ public class Vehiculo {
         this.x = x;
         this.y = y;
         this.averiado = false;
+        this.tiempoUsoMinutosTotal = 0;
         this.historialReparaciones = new ArrayList<>();
     }
 
@@ -84,6 +87,23 @@ public class Vehiculo {
     public void registrarReparacion(double coste, String descripcion) {
         this.averiado = false;
         historialReparaciones.add(new Reparacion(LocalDateTime.now(), coste, descripcion));
+    }
+
+    /**
+     * Devuelve el tiempo total de uso acumulado por este vehículo (en minutos).
+     */
+    public long getTiempoUsoMinutosTotal() {
+        return tiempoUsoMinutosTotal;
+    }
+
+    /**
+     * Suma minutos al contador de tiempo de uso del vehículo.
+     * @param minutos minutos adicionales de uso
+     */
+    public void addTiempoUso(long minutos) {
+        if (minutos > 0) {
+            this.tiempoUsoMinutosTotal += minutos;
+        }
     }
 }
 

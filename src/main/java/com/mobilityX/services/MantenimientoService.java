@@ -70,6 +70,7 @@ public class MantenimientoService {
 
         vehiculo.setAveriado(true);
         vehiculo.setDisponible(false);
+        t.incrementarIntervenciones();
         return true;
     }
 
@@ -88,6 +89,7 @@ public class MantenimientoService {
         vehiculo.setAveriado(false);
         // tras reparar, se puede retirar de la asignación
         lista.remove(vehiculo);
+        t.incrementarIntervenciones();
         return true;
     }
 

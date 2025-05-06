@@ -5,12 +5,14 @@ public abstract class Trabajador {
     protected String correo;
     protected String telefono;
     protected String puesto;
+    private int intervenciones;
 
     public Trabajador(String nombre, String correo, String telefono, String puesto) {
         this.nombre = nombre;
         this.correo = correo;
         this.telefono = telefono;
         this.puesto = puesto;
+        this.intervenciones = 0;
     }
 
     public String getNombre() {
@@ -27,6 +29,14 @@ public abstract class Trabajador {
 
     public String getPuesto() {
         return puesto;
+    }
+
+    public int getIntervenciones() {
+        return intervenciones;
+    }
+
+    public void incrementarIntervenciones() {
+        this.intervenciones++;
     }
 
     public void mostrarInformacion() {

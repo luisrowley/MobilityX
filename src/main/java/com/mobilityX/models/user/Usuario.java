@@ -16,6 +16,7 @@ public class Usuario {
     private int mesesConTiposUsados;
     private Vehiculo vehiculoActual;
     private LocalDateTime inicioAlquiler;
+    private double gastoTotal; // gasto total acumulado en alquileres
 
     public Usuario(String nombre, String correo, String telefono) {
         this.nombre = nombre;
@@ -28,6 +29,7 @@ public class Usuario {
         this.mesesConTiposUsados = 0;
         this.vehiculoActual = null;
         this.inicioAlquiler = null;
+        this.gastoTotal = 0.0;
     }
     
     public String getNombre() {
@@ -78,9 +80,12 @@ public class Usuario {
             throw new IllegalStateException("Saldo insuficiente para finalizar el alquiler");
         }
         saldo -= costoTotal;
+        long minutosUso = java.time.Duration.between(inicioAlquiler, LocalDateTime.now()).toMinutes();
+        vehiculoActual.addTiempoUso(minutosUso);
         vehiculoActual.setDisponible(true);
         vehiculoActual = null;
         inicioAlquiler = null;
+        this.gastoTotal += costoTotal;
     }
 
     public LocalDateTime getInicioAlquiler() {
@@ -89,6 +94,10 @@ public class Usuario {
 
     public Vehiculo getVehiculoActual() {
         return vehiculoActual;
+    }
+
+    public double getGastoTotal() {
+        return gastoTotal;
     }
 
     private void registrarAlquiler(String tipoVehiculo) {

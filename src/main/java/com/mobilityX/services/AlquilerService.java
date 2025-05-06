@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class AlquilerService {
     private final List<Base> bases;
@@ -173,5 +174,41 @@ public class AlquilerService {
 
     private List<Vehiculo> getAllVehiculos(Base base) {
         return base.getVehiculos();
+    }
+
+    public List<Base> getBases() {
+        return new ArrayList<>(bases);
+    }
+
+    /**
+     * Devuelve las N bases más cercanas a la posición dada, ordenadas por distancia ascendente.
+     */
+    public List<Base> basesMasCercanas(int x, int y, int n) {
+        return bases.stream()
+                .sorted((b1, b2) -> Double.compare(distancia(b1, x, y), distancia(b2, x, y)))
+                .limit(n)
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * Devuelve las N motos individuales más cercanas a la posición dada.
+     */
+    public List<Moto> motosMasCercanas(int x, int y, int n) {
+        return getMotosDisponibles().stream()
+                .sorted((m1, m2) -> Double.compare(distancia(m1, x, y), distancia(m2, x, y)))
+                .limit(n)
+                .collect(Collectors.toList());
+    }
+
+    private double distancia(Base b, int x, int y) {
+        int dx = b.getX() - x;
+        int dy = b.getY() - y;
+        return Math.sqrt(dx*dx + dy*dy);
+    }
+
+    private double distancia(Vehiculo v, int x, int y) {
+        int dx = v.getX() - x;
+        int dy = v.getY() - y;
+        return Math.sqrt(dx*dx + dy*dy);
     }
 }
