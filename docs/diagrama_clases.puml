@@ -1,0 +1,44 @@
+@startuml diagrama_clases
+package "com.mobilityX.models" {
+  package "vehicle" {
+    abstract class Vehiculo {
+      -String id
+      -int x
+      -int y
+      +int getTiempoUsoMinutosTotal()
+    }
+    class Bicicleta extends Vehiculo
+    class Patinete extends Vehiculo
+    class Moto extends Vehiculo
+    class Base {
+      -List<Vehiculo> vehiculos
+      +void agregarVehiculo(Vehiculo)
+    }
+  }
+  
+  package "user" {
+    class Usuario
+    class UsuarioPremium extends Usuario
+  }
+  
+  package "worker" {
+    class Trabajador
+    class Administrador extends Trabajador
+  }
+}
+
+package "com.mobilityX.services" {
+  class AlquilerService
+  class MantenimientoService
+  class StatsService
+  class AdminService
+}
+
+Base "1" o-- "*" Vehiculo : contiene
+AlquilerService --> Base : usa
+AlquilerService --> Vehiculo : usa
+MantenimientoService --> Trabajador : usa
+StatsService --> Base : usa
+AdminService --> Usuario : gestiona
+AdminService --> Trabajador : gestiona
+@enduml
