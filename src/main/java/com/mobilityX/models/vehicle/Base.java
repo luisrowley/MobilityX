@@ -55,4 +55,9 @@ public class Base {
         }
         return disponibles;
     }
+
+    // Nuevo: lista completa (copia defensiva)
+    public List<Vehiculo> getVehiculos() {
+        return new ArrayList<>(vehiculos);
+    }
 }

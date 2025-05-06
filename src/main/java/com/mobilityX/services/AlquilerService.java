@@ -144,4 +144,34 @@ public class AlquilerService {
     public Double getTarifa(String tipoVehiculo) {
         return tarifas.get(tipoVehiculo);
     }
+
+    /**
+     * Devuelve un resumen del stock por tipo de vehículo.
+     * El array devuelto contiene:
+     *  index 0 → disponibles
+     *  index 1 → averiados
+     *  index 2 → en uso (no disponible y no averiado)
+     */
+    public Map<String, int[]> obtenerStock() {
+        Map<String, int[]> stock = new HashMap<>();
+        for (Base base : bases) {
+            for (Vehiculo v : getAllVehiculos(base)) {
+                String tipo = v.getClass().getSimpleName();
+                stock.putIfAbsent(tipo, new int[3]);
+                int[] arr = stock.get(tipo);
+                if (v.isDisponible()) {
+                    arr[0]++;
+                } else if (v.isAveriado()) {
+                    arr[1]++;
+                } else {
+                    arr[2]++;
+                }
+            }
+        }
+        return stock;
+    }
+
+    private List<Vehiculo> getAllVehiculos(Base base) {
+        return base.getVehiculos();
+    }
 }
