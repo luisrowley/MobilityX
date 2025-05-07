@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.mobilityX"},{"l":"com.mobilityX.models"},{"l":"com.mobilityX.models.user"},{"l":"com.mobilityX.models.vehicle"},{"l":"com.mobilityX.models.worker"},{"l":"com.mobilityX.services"},{"l":"com.mobilityX.utils"}]
