@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=CLI
+comment0.text=\n\ Interfaz\ de\ l\u00EDnea\ de\ comandos\ muy\ sencilla\ para\ mostrar\ las\ principales\ funciones\n\ exigidas\ en\ el\ Nivel\ 3.\ \ No\ pretende\ ser\ robusta;\ s\u00F3lo\ facilita\ la\ prueba\ manual.\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment1.text=\n\ Punto\ de\ entrada\ principal\ de\ la\ aplicaci\u00F3n\n\ @param\ args\ argumentos\ de\ l\u00EDnea\ de\ comandos\ (no\ utilizados)\n
+comment10.params=
+comment10.target=void\ listarUsuariosPorGasto()
+comment2.params=
+comment2.target=CLI()
+comment3.params=
+comment3.target=void\ loop()
+comment4.params=
+comment4.target=void\ mostrarMenuPrincipal()
+comment5.params=
+comment5.target=void\ menuConsultasCercanas()
+comment6.params=
+comment6.target=void\ menuListados()
+comment7.params=
+comment7.target=void\ listarBasesPorDemanda()
+comment8.params=
+comment8.target=void\ listarTrabajadoresPorInterv()
+comment9.params=
+comment9.target=void\ listarVehiculosPorUso()
+numComments=11
